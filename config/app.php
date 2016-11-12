@@ -162,9 +162,7 @@ return [
         LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class,
 
         Toplan\PhpSms\PhpSmsServiceProvider::class,
-        Toplan\Sms\SmsManagerServiceProvider::class,
-
-        Frozennode\Administrator\AdministratorServiceProvider::class,
+        Toplan\Sms\SmsManagerServiceProvider::class
 
     ],
 

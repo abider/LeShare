@@ -28,23 +28,3 @@ function printer($data)
 	echo '<pre>;';
 	print_r($data);
 }
-
-function model_url($model, $id)
-{
-    return env('APP_URL') . "/$model/$id";
-}
-
-function model_link($title, $model, $id)
-{
-    return '<a href="'.model_url($model, $id).'" target="_blank">' . $title . '</a>';
-}
-
-function admin_link($title, $path, $id = '')
-{
-    return '<a href="'.admin_url($path, $id).'" target="_blank">' . $title . '</a>';
-}
-
-function admin_url($path, $id = '')
-{
-    return env('APP_URL') . "/admin/$path" . ($id ? '/'.$id : '');
-}
