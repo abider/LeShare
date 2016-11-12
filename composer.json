@@ -11,8 +11,7 @@
         "lucadegasperi/oauth2-server-laravel": "5.1.*",
         "jaeger/querylist": "^3.1",
         "toplan/laravel-sms": "2.5.*",
-        "predis/predis": "~1.0",
-        "frozennode/administrator": " 5.*"
+        "predis/predis": "~1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
