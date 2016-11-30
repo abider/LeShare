@@ -12,6 +12,7 @@ $api->put('/me', 'UsersController@store')->middleware('api.auth');
 $api->get('/topics', 'TopicsController@index');
 $api->get('/topics/{id}', 'TopicsController@show');
 $api->get('/me/topics', 'TopicsController@me')->middleware('api.auth');
+$api->post('/topics', 'TopicsController@store')->middleware('api.auth');
 
 # ------------- Comments -------------
 $api->get('/topics/{topic_id}/comments', 'CommentsController@index');

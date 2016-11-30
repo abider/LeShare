@@ -19,4 +19,9 @@ class Topic extends Model
     {
         return $this->hasMany(Comment::class);
     }
+
+    public function Category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

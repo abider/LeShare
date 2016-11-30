@@ -15,7 +15,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'App\Http\Controllers\Web';
+    protected $namespace = 'App\Http\Controllers';
     protected $api_namespace = 'App\Http\Controllers\Api';
 
     /**
@@ -68,14 +68,6 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapApiRoutes()
     {
-        // Route::group([
-        //     'middleware' => 'api',
-        //     'namespace' => $this->api_namespace,
-        //     'prefix' => 'api',
-        // ], function ($router) {
-        //     require base_path('routes/api.php');
-        // });
-
         $api_router = app('Dingo\Api\Routing\Router');
         $api_router->group([
             'version'   => config('api.version'),

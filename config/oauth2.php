@@ -32,18 +32,18 @@ return [
          * 使用login_token方法来获取 Access_Token
          */
         'login_token' => [
-            'class'             => App\Shares\Oauth\LoginTokenGrant::class,
+            'class'             => App\Shares\OAuth\LoginTokenGrant::class,
             'access_token_ttl'  => 2592000,
-            'callback'          => App\Shares\Oauth\LoginTokenVerifier::class.'@verify',
+            'callback'          => App\Shares\OAuth\LoginTokenVerifier::class.'@verify',
         ],
 
         /*
          * 使用密码授权方法来获取 Access_Token
          */
         'password' => [
-            'class'             => App\Shares\Oauth\PasswordGrant::class,
+            'class'             => App\Shares\OAuth\PasswordGrant::class,
             'access_token_ttl'  => 2592000,
-            'callback'          => App\Shares\Oauth\PasswordVerifier::class.'@verify',
+            'callback'          => App\Shares\OAuth\PasswordVerifier::class.'@verify',
         ],
 
 
@@ -51,9 +51,9 @@ return [
          * 使用短信验证码授权方法来获取 Access_Token
          */
         'sms' => [
-            'class'             => App\Shares\Oauth\SmsGrant::class,
+            'class'             => App\Shares\OAuth\SmsGrant::class,
             'access_token_ttl'  => 2592000,
-            'callback'          => App\Shares\Oauth\SmsVerifier::class.'@verify',
+            'callback'          => App\Shares\OAuth\SmsVerifier::class.'@verify',
         ],
 
         /*

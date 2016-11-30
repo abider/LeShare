@@ -7,6 +7,8 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
+use Captcha;
 
 class AuthController extends Controller
 {
@@ -37,7 +39,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+        $this->middleware('guest', ['except' => 'logout']);
     }
 
     /**
@@ -51,7 +53,7 @@ class AuthController extends Controller
         return Validator::make($data, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
+            'password' => 'required|confirmed|min:6',
         ]);
     }
 
@@ -68,5 +70,22 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    /**
+     * 验证码需要必填
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
+    protected function validateLogin(Request $request)
+    {
+        $this->validate($request,[
+            'email' => 'required',
+            'password' => 'required',
+            'captcha' => 'required|captcha'
+            ],[
+                'captcha.captcha' => trans('validation.captcha'),
+                'captcha.required' => trans('validation.captcha_required'),
+            ]);
     }
 }

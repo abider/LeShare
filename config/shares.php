@@ -4,35 +4,22 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | posts 页面相关格式参数设置
+    | 一些基本的app返回设置
     |--------------------------------------------------------------------------
     */
 
 	'topics' => [
 		'list' => [
-			'prePage' => 10,
-			'fields'  => [
-				'id',
-				'title',
-				'updated_at as time'
-			],
-		],
-		'show' => [
-			'fields'  => [
-				'id',
-				'title',
-				'updated_at as time',
-				'body as content'
-			],
-		],
+			'prePage' => 10
+		]
 	],
 	'users' => [
 		'me' => [
-			'fields' => [
-				'name as username',
-				'mobile as tel',
-				'verified as is_login'
-			],
+		],
+	],
+	'comments' => [
+		'list' => [
+			'prePage' => 10
 		],
 	],
 ];

@@ -6,7 +6,7 @@ class CommentTransformer extends BaseTransformer
 {
     // protected $availableIncludes = ['user'];
 
-    // protected $defaultIncludes  = ['user'];
+    protected $defaultIncludes  = ['user'];
 
     public function transformData($model)
     {
@@ -15,7 +15,7 @@ class CommentTransformer extends BaseTransformer
             "topic_id" => $model->topic_id,
             "user_id" => $model->user_id,
             "body" => $model->body,
-            'created_at' => strtotime($model->created_at),
+            'time' => strtotime($model->created_at),
         ];
     }
 

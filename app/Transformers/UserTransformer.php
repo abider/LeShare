@@ -11,6 +11,9 @@ class UserTransformer extends BaseTransformer
         return [
             'id' => $model->id,
             'name' => $model->name,
+            'email' => $model->email,
+            'mobile' => $model->mobile,
+            'avatar' => $model->avatar,
             'time' => strtotime($model->created_at),
         ];
     }

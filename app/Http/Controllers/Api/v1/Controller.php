@@ -19,9 +19,9 @@ class Controller extends BaseController
      * @param  array   $data    [返回数据]
      * @return \Illuminate\Http\Response
      */
-    public function apiResponse($code = 200, $message = 'success', $data = null)
+    public function apiResponse($code = 200, $status = 'ok', $data = null)
 	{
-		$resp = ['code' => $code, 'message' => $message];
+		$resp = ['code' => $code, 'status' => $status];
         if (is_array($data) && !is_null($data)) $resp['data'] = $data;
 		return Response($resp);
 	}

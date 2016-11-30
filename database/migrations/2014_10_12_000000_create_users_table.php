@@ -20,14 +20,15 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('login_token')->nullable();
             $table->enum('is_locked', ['yes',  'no'])->default('no')->index(); // 锁定
-            $table->string('image_url')->nullable(); // 头像url
+            $table->string('avatar')->nullable(); // 头像url
             $table->integer('topic_count')->default(0)->index(); // 发表
             $table->integer('reply_count')->default(0)->index(); // 回复
             $table->string('city')->nullable();
             $table->string('company')->nullable();
             $table->string('introduction')->nullable(); // 介绍
             $table->boolean('verified')->default(false)->index(); // 验证
-            $table->enum('email_notify_enabled', ['yes',  'no'])->default('yes')->index();
+            $table->tinyInteger('status')->default(1)->comment("1-正常，2-禁用");
+            $table->tinyInteger('confirm_email')->default(2)->comment('1-验证，2-没验证');
             $table->timestamp('last_actived_at')->nullable(); // 最后登录时间
             $table->rememberToken();
             $table->softDeletes();

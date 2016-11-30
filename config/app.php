@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'zh',
 
     /*
     |--------------------------------------------------------------------------
@@ -162,7 +162,17 @@ return [
         LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class,
 
         Toplan\PhpSms\PhpSmsServiceProvider::class,
-        Toplan\Sms\SmsManagerServiceProvider::class
+        Toplan\Sms\SmsManagerServiceProvider::class,
+
+        App\Providers\BackendServiceProvider::class,
+        Bican\Roles\RolesServiceProvider::class,
+        Arcanedev\LogViewer\LogViewerServiceProvider::class,
+        HieuLe\Active\ActiveServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
+        Mews\Captcha\CaptchaServiceProvider::class,
+
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Orangehill\Iseed\IseedServiceProvider::class
 
     ],
 
@@ -215,6 +225,16 @@ return [
         'PhpSms' => Toplan\PhpSms\Facades\Sms::class,
         'SmsManager' => Toplan\Sms\Facades\SmsManager::class,
 
+        'Active' => HieuLe\Active\Facades\Active::class,
+        'Flash' => Laracasts\Flash\Flash::class,
+        'Captcha' => Mews\Captcha\Facades\Captcha::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+
+        //仓库
+        'UserRepository' => App\Facades\UserFacade::class,
+        'PermissionRepository' => App\Facades\PermissionFacade::class,
+        'RoleRepository' => App\Facades\RoleFacade::class,
+        'MenuRepository' => App\Facades\MenuFacade::class
     ],
 
 ];

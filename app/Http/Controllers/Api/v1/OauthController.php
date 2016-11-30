@@ -21,7 +21,7 @@ class OauthController extends Controller
             $user = User::where('mobile', $userMobile)->first();
             $user->login_token = $access_token;
             $user->save();
-            return $this->apiResponse(200, 'success', $issue_access_token);
+            return $this->apiResponse(200, 'ok', $issue_access_token);
         }
 
         return response()->json($issue_access_token);
@@ -36,7 +36,7 @@ class OauthController extends Controller
 
         if ($send_resp->result->success) {
             Redis::set('mobile:'.$mobile, $code);
-            return $this->apiResponse(200, 'success');
+            return $this->apiResponse(200, 'ok');
         }
 
         return response()->json($send_resp);
