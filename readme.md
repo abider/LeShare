@@ -1,28 +1,30 @@
-# Laravel PHP Framework
+# LeShare -- 以分享为中心
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+> 为分享动作提供的内容平台。
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+![](http://oh6t02bhk.bkt.clouddn.com/1.png)
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+## 实现
 
-## Official Documentation
+项目以 `Laravel 5.2` 为基础，以`Restful API`为设计规范，搭配`OAuth2`实现API服务。
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+## 主要功能
 
-## Contributing
+* 主题的查看与创建
+* 评论模块的实现
+* 分类实现
+* 手机号注册与登陆（无密码设计，统一采用短信验证码）
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
-# LeShare
+## API
+* `POST  /oauth/access_token`  获取Token
+* `POST /sms`  发送验证码
+* `GET /me  `   获取个人信息
+* `PUT /me ` 修改个人信息
+* `GET /topics ` 获取主题列表
+* `GET /topics/{id} ` 获取主题内容
+* `GET /me/topics ` 获取我的主题列表
+* `POST /topics ` 创建一个主题
+* `GET /topics/{topic_id}/comments ` 获取某个主题下的评论
+* `GET /comments/{id} ` 获取某个评论下的回复
+* `POST /topics/{topic_id}/comments ` 评论某个主题
+* `GET /me/comments ` 获取的我的评论列表

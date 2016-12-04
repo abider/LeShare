@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
         // factory(App\Category::class, 10)->create();
         // \DB::table('topics')->delete();
         // factory(App\Topic::class, 50)->create();
-        // \DB::table('comments')->delete();
-        // factory(App\Comment::class, 500)->create();
+        \DB::table('comments')->delete();
+        factory(App\Comment::class, 500)->create();
     }
 }

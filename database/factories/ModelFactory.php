@@ -42,8 +42,8 @@ $factory->define(App\Category::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Comment::class, function (Faker\Generator $faker) {
     return [
-    	'topic_id' => mt_rand(90, 139),
-        'user_id' => mt_rand(1, 30),
+    	'topic_id' => mt_rand(37, 86),
+        'user_id' => mt_rand(1, 32),
         'body' => $faker->sentence(mt_rand(10, 20)),
         'created_at' => $faker->dateTime,
     ];
